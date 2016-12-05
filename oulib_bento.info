@@ -1,0 +1,6 @@
+name = OU Libraries Bento Search UI
+description = Blocks for the OU Libraries bento box search
+core = 7.x
+dependencies[] = block
+package = OU Libraries
+scripts[] = bento.js

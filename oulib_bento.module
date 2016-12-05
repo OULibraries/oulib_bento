@@ -1,0 +1,104 @@
+<?php
+
+
+
+/**
+ * Implements hook_libraries_info().
+ *
+ * For defining external libraries.
+ */
+function oulib_bento_libraries_info() {
+
+  /* Specify Mustache.js library, used for tempalting */
+
+  $libraries['mustache.js'] = array(
+    'name' => 'Mustache js templates',
+    'vendor url' => 'https://mustache.github.io/',
+    'download url' => 'https://mustache.github.io/',
+    'version' => '2.3.0',
+    'files' => array(
+      'js' => array('mustache.js')
+    )
+  );
+
+  return $libraries;
+
+}
+
+
+/**
+ * Implements hook_block_info().
+ *
+ * This hook declares what blocks are provided by the module.
+ */
+function oulib_bento_block_info(){
+
+  $blocks = array();
+  $blocks['oubento_search'] =  array(
+    'info' => t('Bento - Search Form'),
+  );
+  $blocks['oubento_results_primo'] = array(
+    'info' => t('Bento - Primo Search Results'),
+  );
+  $blocks['oubento_results_primobooks'] = array(
+    'info' => t('Bento - Primo Books Search Results'),
+  );
+
+  $blocks['oubento_results_primoshareok'] = array(
+    'info' => t('Bento - Primo SHAREOK Search Results'),
+  );
+
+  $blocks['oubento_results_libguides']  = array(
+    'info' => t('Bento - Lib Guides  Search Results'),
+  );
+
+  return $blocks;
+}
+
+function oulib_bento_theme($existing, $type, $theme, $path) {
+  return array(
+    'oubento_search' => array(
+      'template' => 'oubento_search',
+      'variables' => array(),
+    ),
+    'oubento_results' => array(
+      'template' => 'oubento_results',
+      'variables' => array(),
+    ),
+  );
+}
+
+
+function oulib_bento_block_view($delta='') {
+
+
+  libraries_load("mustache.js");
+
+  $block = array();
+  $variables = array();
+
+  switch($delta) {
+    case 'oubento_search' :
+      $block['subject'] = t('Search');
+      $block['content'] = theme('oubento_search', $variables);
+      break;
+    case 'oubento_results_primo' :
+      $block['subject'] = t('Primo Results');
+      $block['content'] = theme('oubento_results', $variables);
+      break;
+    case 'oubento_results_primobooks' :
+      $block['subject'] = t('Primo Books Results');
+      $block['content'] = theme('oubento_results', $variables);
+      break;
+    case 'oubento_results_primoshareok' :
+      $block['subject'] = t('Primo SHAREOK Results');
+      $block['content'] = theme('oubento_results', $variables);
+      break;
+    case 'oubento_results_libguides' :
+      $block['subject'] = t('LibGuides Results');
+      $block['content'] = theme('oubento_results', $variables);
+      break;
+
+  }
+  return $block;
+}
