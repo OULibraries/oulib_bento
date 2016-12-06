@@ -136,6 +136,11 @@ function oulib_bento_menu(){
 //  return $modperms;
 //}
 
+/**
+ * @return mixed
+ *
+ * Configuration settings for the OneSearch
+ */
 function oulib_bento_settings() {
 
   $form = array();
@@ -143,18 +148,29 @@ function oulib_bento_settings() {
   $form['oulib_bento_server'] = array(
     '#type' => 'textfield',
     '#title' => t('One Search URI'),
-    '#default_value' => variable_get('oulib_bento_server', "blah blah"),
+    '#default_value' => variable_get('oulib_bento_server', ""),
     '#description' => t("The URI for One Search"),
     '#required' => TRUE,
+  );
+
+  $form['oulib_bento_search_limit'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Results Limit'),
+    '#default_value' => variable_get('oulib_bento_search_limit', 5),
+    '#description' => t('The number of results to display to the user'),
+    '#required' => TRUE,
+    '#size' => 3,
+    '#maxlength' => 3,
   );
 
   return system_settings_form($form);
 }
 
-$testvariable = variable_get('oulib_bento_server', "maybe worked");
+$serverURI = variable_get('oulib_bento_server', "");
+$resultLimit = variable_get('oulib_bento_search_limit', 10);
 
-error_log($testvariable);
-
-var_dump($testvariable);
-
-drupal_add_js(array('oulib_bento' => array('uri' => $testvariable)), array('type' => 'setting'));
+drupal_add_js(array(
+  'oulib_bento' => array(
+    'searchURI' => $serverURI,
+    'resultLimit' => $resultLimit)),
+  array('type' => 'setting'));
