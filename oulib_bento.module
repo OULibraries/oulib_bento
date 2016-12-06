@@ -77,24 +77,29 @@ function oulib_bento_block_view($delta='') {
   $block = array();
   $variables = array();
 
+
   switch($delta) {
     case 'oubento_search' :
       $block['subject'] = t('Search');
       $block['content'] = theme('oubento_search', $variables);
       break;
     case 'oubento_results_primo' :
+      $variables['silo'] = "primo";
       $block['subject'] = t('Primo Results');
       $block['content'] = theme('oubento_results', $variables);
       break;
     case 'oubento_results_primobooks' :
+      $variables['silo'] = "primobooks";
       $block['subject'] = t('Primo Books Results');
       $block['content'] = theme('oubento_results', $variables);
       break;
     case 'oubento_results_primoshareok' :
+      $variables['silo'] = "primoshareok";
       $block['subject'] = t('Primo SHAREOK Results');
       $block['content'] = theme('oubento_results', $variables);
       break;
     case 'oubento_results_libguides' :
+      $variables['silo'] = "libguides";
       $block['subject'] = t('LibGuides Results');
       $block['content'] = theme('oubento_results', $variables);
       break;

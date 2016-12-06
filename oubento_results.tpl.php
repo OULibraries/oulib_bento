@@ -1,5 +1,4 @@
 <?php
-$silo="primo";
 /**
  * Template Variables
  *
