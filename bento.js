@@ -26,7 +26,7 @@ function doSearch(target, needle) {
     $.ajax({
 	url: myurl,
 	dataType: "jsonp",
-	success: function (result){  return displayResults(target, result);},
+	success: function (result){  return displayResults(target, result);}
     });
 }
 
