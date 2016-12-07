@@ -19,12 +19,14 @@ function displayResults(target, json){
 // run a search against the gateway
 function doSearch(target, needle) {
     console.log( needle, target);
+    var searchURI = Drupal.settings.oulib_bento.searchURI;
+    var resultLimit = Drupal.settings.oulib_bento.resultLimit;
 
-    var myurl="https://search.vagrant.localdomain/search?t="+target+"&q="+needle+"&n=10";
+    var myurl=searchURI + "/search?t="+target+"&q="+needle+"&n=" + resultLimit;
     $.ajax({
 	url: myurl,
 	dataType: "jsonp",
-	success: function (result){  return displayResults(target, result);},
+	success: function (result){  return displayResults(target, result);}
     });
 }
 

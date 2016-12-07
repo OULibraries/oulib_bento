@@ -107,3 +107,70 @@ function oulib_bento_block_view($delta='') {
   }
   return $block;
 }
+
+/**
+ * Implements hook_menu().
+ */
+function oulib_bento_menu(){
+
+  /* proxy settings */
+  $items['admin/config/search/bento']
+    = array(
+    'title' => 'One search settings',
+    'description' => 'Configure the settings for One Search',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('oulib_bento_settings'),
+    'access arguments' => array('administer suma_stats settings'),
+  );
+
+  return $items;
+}
+
+// uncomment this if we want permissions set on 1S settings
+//function suma_stats_permission() {
+//  $modperms = array(
+//    'administer oulib_bento settings' => array(
+//      'title' => t('Administer One Search Settings'),
+//    ),
+//  );
+//  return $modperms;
+//}
+
+/**
+ * @return mixed
+ *
+ * Configuration settings for the OneSearch
+ */
+function oulib_bento_settings() {
+
+  $form = array();
+
+  $form['oulib_bento_server'] = array(
+    '#type' => 'textfield',
+    '#title' => t('One Search URI'),
+    '#default_value' => variable_get('oulib_bento_server', ""),
+    '#description' => t("The URI for One Search"),
+    '#required' => TRUE,
+  );
+
+  $form['oulib_bento_search_limit'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Results Limit'),
+    '#default_value' => variable_get('oulib_bento_search_limit', 5),
+    '#description' => t('The number of results to display to the user'),
+    '#required' => TRUE,
+    '#size' => 3,
+    '#maxlength' => 3,
+  );
+
+  return system_settings_form($form);
+}
+
+$serverURI = variable_get('oulib_bento_server', "");
+$resultLimit = variable_get('oulib_bento_search_limit', 10);
+
+drupal_add_js(array(
+  'oulib_bento' => array(
+    'searchURI' => $serverURI,
+    'resultLimit' => $resultLimit)),
+  array('type' => 'setting'));
