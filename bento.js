@@ -7,10 +7,12 @@ var mySearches = [];
 mySearches.push( function(needle) { return doSearch("primobooks", needle); });
 mySearches.push( function(needle) { return doSearch("primo", needle); });
 mySearches.push( function(needle) { return doSearch("libguides", needle); });
+mySearches.push( function(needle) { return doSearch("primoshareok", needle); });
+mySearches.push( function(needle) { return doSearch("collection", needle); });
 
 // template search results onto the page
 function displayResults(target, json){
-    var template = $("#resultTemplate").html();
+    var template = $("#resultTemplate").html(); console.log(json.data);
     var searchResults = Mustache.to_html(template, json.data);
     console.log(".oubento_result_"+target);
     $(".oubento_result_"+target ).html(searchResults);
@@ -30,7 +32,7 @@ function doSearch(target, needle) {
     });
 }
 
-// load search spcified by query params
+// load search specified by query params
 function loadSearch(){
     // may need to polyfill this
     var urlParams = new URLSearchParams(window.location.search);
