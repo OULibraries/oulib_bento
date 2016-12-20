@@ -12,7 +12,7 @@ mySearches.push( function(needle) { return doSearch("collection", needle); });
 
 // template search results onto the page
 function displayResults(target, json){
-    var template = $("#resultTemplate").html(); console.log(json.data);
+    var template = $("#resultTemplate").html();
     var searchResults = Mustache.to_html(template, json.data);
     console.log(".oubento_result_"+target);
     $(".oubento_result_"+target ).html(searchResults);
@@ -20,7 +20,7 @@ function displayResults(target, json){
 
 // run a search against the gateway
 function doSearch(target, needle) {
-    console.log( needle, target);
+
     var searchURI = Drupal.settings.oulib_bento.searchURI;
     var resultLimit = Drupal.settings.oulib_bento.resultLimit;
 
@@ -36,7 +36,7 @@ function doSearch(target, needle) {
 function loadSearch(){
     // may need to polyfill this
     var urlParams = new URLSearchParams(window.location.search);
-    var needle = urlParams.get("q");
+    var needle = urlParams.get("onesearch");
     $( "#oubento_searchForm > input:first" ).val(needle);
     if(needle) {
 	mySearches.forEach( function(srch) { srch(needle); });
@@ -47,7 +47,7 @@ function loadSearch(){
 function submitSearch ( event ) {
    event.preventDefault();
     var needle=$( "#oubento_searchForm > input:first" ).val();
-    history.pushState({}, "Search", window.location.pathname + "?q=" +needle );
+    history.pushState({}, "Search", window.location.pathname + "?onesearch=" +needle );
     if(needle) {
 	mySearches.forEach( function(srch) { srch(needle); });
     }
