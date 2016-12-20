@@ -48,6 +48,10 @@ function oulib_bento_block_info(){
     'info' => t('Bento - Primo SHAREOK Search Results'),
   );
 
+  $blocks['oubento_results_collection'] = array(
+    'info' => t('Bento - Primo Special Collections Search Results'),
+  );
+
   $blocks['oubento_results_libguides']  = array(
     'info' => t('Bento - Lib Guides  Search Results'),
   );
@@ -98,6 +102,11 @@ function oulib_bento_block_view($delta='') {
       $block['subject'] = t('Primo SHAREOK Results');
       $block['content'] = theme('oubento_results', $variables);
       break;
+    case 'oubento_results_collection' :
+      $variables['silo'] = "collection";
+      $block['subject'] = t('Primo Special Collection Results');
+      $block['content'] = theme('oubento_results', $variables);
+      break;
     case 'oubento_results_libguides' :
       $variables['silo'] = "libguides";
       $block['subject'] = t('LibGuides Results');
@@ -127,7 +136,7 @@ function oulib_bento_menu(){
 }
 
 // uncomment this if we want permissions set on 1S settings
-//function suma_stats_permission() {
+//function oulib_bento_permission() {
 //  $modperms = array(
 //    'administer oulib_bento settings' => array(
 //      'title' => t('Administer One Search Settings'),
