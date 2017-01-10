@@ -37,7 +37,7 @@ function loadSearch(){
     // may need to polyfill this
     var urlParams = new URLSearchParams(window.location.search);
     var needle = urlParams.get("onesearch");
-    $( "#oubento_searchForm > input:first" ).val(needle);
+    var needle=$( "#oubento_searchForm input[id=searchInput]" ).val();
     if(needle) {
 	mySearches.forEach( function(srch) { srch(needle); });
     }
@@ -46,7 +46,7 @@ function loadSearch(){
 // search form handler
 function submitSearch ( event ) {
    event.preventDefault();
-    var needle=$( "#oubento_searchForm > input:first" ).val();
+    var needle=$( "#oubento_searchForm input[id=searchInput]" ).val();
     history.pushState({}, "Search", window.location.pathname + "?onesearch=" +needle );
     if(needle) {
 	mySearches.forEach( function(srch) { srch(needle); });
