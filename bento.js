@@ -9,6 +9,7 @@ mySearches.push( function(needle) { return doSearch("primo", needle); });
 mySearches.push( function(needle) { return doSearch("libguides", needle); });
 mySearches.push( function(needle) { return doSearch("primoshareok", needle); });
 mySearches.push( function(needle) { return doSearch("collection", needle); });
+mySearches.push( function(needle) { return doSearch("site", needle); });
 
 // template search results onto the page
 function displayResults(target, json){
