@@ -62,9 +62,52 @@ Drupal.behaviors.bentoSearch = {
 	loadSearch();
 	$("#oubento_searchForm").submit( submitSearch);
     }
-}
+};
 
+Drupal.behaviors.oulib_bento = {
+    attach: function (context, settings) {
+        $('.extra-search', context).click(function (event) {
 
+            // get the parameter value for 'onesearch' (the search term)
+            var urlParams;
+            (window.onpopstate = function () {
+                var match,
+                    pl     = /\+/g,  // Regex for replacing addition symbol with a space
+                    search = /([^&=]+)=?([^&]*)/g,
+                    decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+                    query  = window.location.search.substring(1);
+
+                urlParams = {};
+                while (match = search.exec(query))
+                    urlParams[decode(match[1])] = decode(match[2]);
+            })();
+
+            event.preventDefault();
+
+            var searchTerm = urlParams['onesearch'];
+
+            switch (this.id) {
+                case 'search-scholar-icon':
+                    window.location = 'https://scholar.google.com/scholar?q=' + searchTerm;
+                    break;
+                case 'search-threed-icon':
+                    window.location = 'https://sketchfab.com/search?q=' + searchTerm;
+                    break;
+                case 'search-worldcat-icon':
+                    window.location = 'http://ou.worldcat.org/search?qt=wc_org_ou&q=' + searchTerm;
+                    break;
+                case 'search-dpla-icon':
+                    window.location = 'https://dp.la/search?utf8=%E2%9C%93&q=' + searchTerm;
+                    break;
+                case 'search-hathitrust-icon':
+                    window.location = 'https://babel.hathitrust.org/cgi/ls?field1=ocr;q1=' + searchTerm + ';a=srchls;lmt=ft';
+                    break;
+                default:
+                    alert('No link given.');
+            }
+        });
+    }
+};
 
 
 
