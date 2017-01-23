@@ -58,6 +58,9 @@ function oulib_bento_block_info(){
   $blocks['oubento_results_site'] = array(
     'info' => t('Bento - Site Search Results'),
   );
+  $blocks['oubento_results_extrasearch'] = array(
+    'info' => t('Bento - Extra Searches'),
+  );
 
   return $blocks;
 }
@@ -118,6 +121,11 @@ function oulib_bento_block_view($delta='') {
     case 'oubento_results_site' :
       $variables['silo'] = "site";
       $block['subject'] = t('Libraries Web');
+      $block['content'] = theme('oubento_results', $variables);
+      break;
+    case 'oubento_results_extrasearch' :
+      $variables['silo'] = 'extrasearch';
+      $block['subject'] = t('Extra Searches');
       $block['content'] = theme('oubento_results', $variables);
       break;
   }
