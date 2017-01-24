@@ -9,6 +9,9 @@ drupal_add_js(drupal_get_path('module', 'oulib_bento') . '/bento.js');
 if ($silo == 'extrasearch') { ?>
   <div class="container-fluid">
     <div class="row">
+      <p>
+        Perform this search on another site.
+      </p>
       <a class="col-md-2 extra-search" id="search-scholar-icon"
          href="https://scholar.google.com"><img
           src="/sites/all/themes/oulib_bootstrap/img/icon_google_scholar.png"></a>

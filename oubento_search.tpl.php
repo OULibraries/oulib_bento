@@ -3,7 +3,7 @@
     <div class="col-sm-10">
       <input type="text" class="form-control input-lg search-bar" placeholder="Search" id="searchInput">
     </div>
-    <button  class="col-sm-2 btn btn-default search-bar-btn" type="submit">Search! <span class="glyphicon glyphicon-search"></span></button>
+    <button  class="col-sm-2 btn btn-default search-bar-btn" type="submit">Search  <span class="glyphicon glyphicon-search"></span></button>
   </div>
 </form>
 
