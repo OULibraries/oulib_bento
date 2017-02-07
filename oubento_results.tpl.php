@@ -14,23 +14,23 @@ if ($silo == 'extrasearch') { ?>
       </p>
       <a class="col-md-2 extra-search" id="search-scholar-icon"
          href="https://scholar.google.com"><img
-          src="/sites/all/themes/oulib_bootstrap/img/icon_google_scholar.png" alt="Google Scholar"></a>
+          src="/sites/all/themes/oulib_bootstrap/img/icon_google_scholar.png" title="Google Scholar"></a>
 
       <a class="col-md-2 extra-search" id="search-threed-icon"
          href="https://sketchfab.com"><img
-          src="/sites/all/themes/oulib_bootstrap/img/icon_3D_models.png" alt="Sketchfab"></a>
+          src="/sites/all/themes/oulib_bootstrap/img/icon_3D_models.png" title="3D Models in Sketchfab"></a>
 
       <a class="col-md-2 extra-search" id="search-worldcat-icon"
          href="https://ou.worldcat.org"><img
-          src="/sites/all/themes/oulib_bootstrap/img/icon_worldcat.png" alt="OCLC WorldCat"></a>
+          src="/sites/all/themes/oulib_bootstrap/img/icon_worldcat.png" title="OCLC WorldCat"></a>
 
       <a class="col-md-2 extra-search" id="search-dpla-icon"
          href="https://dp.la"><img
-          src="/sites/all/themes/oulib_bootstrap/img/icon_dpla.png" alt="Digital Public Library of America"></a>
+          src="/sites/all/themes/oulib_bootstrap/img/icon_dpla.png" title="Digital Public Library of America"></a>
 
       <a class="col-md-2 extra-search" id="search-hathitrust-icon"
          href="https://babel.hathitrust.org"><img
-          src="/sites/all/themes/oulib_bootstrap/img/icon_hathitrust.png" alt="HathiTrust"></a>
+          src="/sites/all/themes/oulib_bootstrap/img/icon_hathitrust.png" title="HathiTrust"></a>
 		  
     </div>
   </div>
