@@ -24,7 +24,9 @@
       </div>
     {{/hits}}
     </br>
-      <p><a class="btn btn-default results-total" href="{{full}}">{{#plural}}{{all}}{{/plural}} {{total}} {{topLabel}}{{#plural}}{{end}}{{/plural}}</a></p>
+      <p><a class="btn btn-default results-total"
+      href="{{full}}">{{total}} {{topLabel}}
+      Result{{#plural}}{{end}}{{/plural}}</a></p>
 
 
 </script>
