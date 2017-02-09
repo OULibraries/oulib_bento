@@ -14,7 +14,7 @@ if ($silo == 'extrasearch') { ?>
       </p>
       <a class="col-md-2 extra-search" id="search-scholar-icon"
          href="https://scholar.google.com"><img
-          src="/sites/all/themes/oulib_bootstrap/img/icon_google_scholar.png" title="Google Scholar, search scholarly literature from a variety of disciplines." alt="Google Scholar"></a>
+          src="/sites/all/themes/oulib_bootstrap/img/icon_google_scholar.png" title="Google Scholar, Search scholarly literature from a variety of disciplines." alt="Google Scholar"></a>
 
       <a class="col-md-2 extra-search" id="search-threed-icon"
          href="https://sketchfab.com"><img
