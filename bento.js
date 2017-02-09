@@ -81,7 +81,7 @@
         }
     };
 
-    Drupal.behaviors.oulib_bento = {
+    Drupal.behaviors.extraSearch = {
         attach: function (context, settings) {
             $('.extra-search', context).click(function (event) {
 
@@ -140,7 +140,6 @@
             var modal;
 
             $('.glyph-modal', context).click(function (event) {
-                console.log(this.id);
                 event.preventDefault();
 
                 // Get the modal
@@ -152,7 +151,6 @@
 
             // Click the ok button to close the modal
             $('.search-modal-ok', context).click(function (event) {
-                console.log('what what');
                 event.preventDefault();
 
                 modal.style.display = 'none';
@@ -160,7 +158,6 @@
 
             // click the x to close the modal
             $('.close-modal', context).click(function (event) {
-                console.log('what');
                 event.preventDefault();
 
                 modal.style.display = 'none';
