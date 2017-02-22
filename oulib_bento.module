@@ -1,6 +1,10 @@
 <?php
 
 
+function oulib_bento_init() {
+  drupal_add_library('system', 'jquery.ui');
+}
+
 
 /**
  * Implements hook_libraries_info().

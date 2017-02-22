@@ -104,10 +104,12 @@
                 event.preventDefault();
 
                 var searchTerm = urlParams['onesearch'];
+                var newLoc = '';
 
                 switch (this.id) {
                     case 'search-scholar-icon':
-                        window.location = 'https://scholar.google.com/scholar?q=' + searchTerm;
+                        newLoc = 'https://scholar.google.com/scholar?q=' + searchTerm;
+                        custom_alert('Google Scholar', newLoc);
                         break;
                     case 'search-threed-icon':
                         window.location = 'https://sketchfab.com/search?q=' + searchTerm;
@@ -128,6 +130,52 @@
         }
     };
 
+    function custom_alert(output_msg, new_location)
+    {
+        var title_msg = 'OU Libraries';
+
+        output_msg = 'You are leaving the OU Libraries website. Do you' +
+            ' want to perform this search on ' + output_msg + '?';
+
+        if (!new_location)
+            new_location = 'https://www.libraries.ou.edu';
+
+        var div = $('<p></p>');
+        div.html(output_msg).dialog({
+            minWidth: 400,
+            minHeight: 200,
+            title: title_msg,
+            resizable: false,
+            modal: true,
+            open: function (event, ui) {
+                var $this = $(this);
+                setTimeout(function () {
+                    $('#loading-indicator').show();
+                    $this.dialog('close');
+                    window.location = new_location;
+                }, 5000);
+            },
+            buttons: {
+                "Cancel": function()
+                {
+                    $( this ).dialog( "close" );
+                    // cleanup
+                    div.remove();
+                }
+            }
+        });
+    }
+
+    // // prompt alert to warn that user is leaving page
+    // window.onbeforeunload = function() {
+    //     return "This will take you outside of OU's website.";
+    // };
+    // // but only do it if it is an external link
+    // // the ones we want have a rel="ext" in oubento_results.tpl.php
+    // $(document).ready(function() {
+    //     $('a[rel!=ext]').click(function() { window.onbeforeunload = null; });
+    //     $('form').submit(function() { window.onbeforeunload = null; });
+    // });
 
     /**
      * The bento search question mark modals
