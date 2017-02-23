@@ -4,7 +4,6 @@
  *
  * $silo silo from which to load results
  */
-//drupal_add_js('/bento.js');
 drupal_add_js(drupal_get_path('module', 'oulib_bento') . '/bento.js');
 if ($silo == 'extrasearch') { ?>
   <div class="container-fluid">

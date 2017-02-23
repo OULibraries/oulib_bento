@@ -108,8 +108,7 @@
 
                 switch (this.id) {
                     case 'search-scholar-icon':
-                        newLoc = 'https://scholar.google.com/scholar?q=' + searchTerm;
-                        custom_alert('Google Scholar', newLoc);
+                        window.location = 'https://scholar.google.com/scholar?q=' + searchTerm;
                         break;
                     case 'search-threed-icon':
                         window.location = 'https://sketchfab.com/search?q=' + searchTerm;
@@ -130,6 +129,14 @@
         }
     };
 
+    /**
+     * This is the function that will create a pop up if the user is leaving
+     * the page. I am leaving it here in case someone changes our minds and
+     * wants it back no the site. It is not currently being called.
+     *
+     * @param output_msg
+     * @param new_location
+     */
     function custom_alert(output_msg, new_location)
     {
         var title_msg = 'OU Libraries';
@@ -165,17 +172,6 @@
             }
         });
     }
-
-    // // prompt alert to warn that user is leaving page
-    // window.onbeforeunload = function() {
-    //     return "This will take you outside of OU's website.";
-    // };
-    // // but only do it if it is an external link
-    // // the ones we want have a rel="ext" in oubento_results.tpl.php
-    // $(document).ready(function() {
-    //     $('a[rel!=ext]').click(function() { window.onbeforeunload = null; });
-    //     $('form').submit(function() { window.onbeforeunload = null; });
-    // });
 
     /**
      * The bento search question mark modals
