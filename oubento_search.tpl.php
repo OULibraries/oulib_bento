@@ -11,7 +11,15 @@
     {{#hits}}
       <div class="result row">
       <div class="col-sm-1 result-images-div">
+
+      {{^image}}
       <img class="result-images" src="sites/all/themes/oulib_bootstrap/img/result-icon-{{type}}.png" >
+      {{/image}}
+
+      {{#image}}
+      <img class="result-images" src="{{image}}" >
+      {{/image}}
+
       </div>
       <div class="result-group col-sm-11">
         <p>

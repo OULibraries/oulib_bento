@@ -47,15 +47,18 @@ function oulib_bento_block_info(){
   $blocks['oubento_results_primobooks'] = array(
     'info' => t('Bento - Primo Books Search Results'),
   );
-
   $blocks['oubento_results_primoshareok'] = array(
     'info' => t('Bento - Primo SHAREOK Search Results'),
   );
-
+  $blocks['oubento_results_eresource'] = array(
+    'info' => t('Bento - eResource Search Results'),
+  );
+  $blocks['oubento_results_people'] = array(
+    'info' => t('Bento - People Search Results'),
+  );
   $blocks['oubento_results_collection'] = array(
     'info' => t('Bento - Primo Special Collections Search Results'),
   );
-
   $blocks['oubento_results_libguides']  = array(
     'info' => t('Bento - Lib Guides  Search Results'),
   );
@@ -110,6 +113,16 @@ function oulib_bento_block_view($delta='') {
     case 'oubento_results_primoshareok' :
       $variables['silo'] = "primoshareok";
       $block['subject'] = t('Primo SHAREOK Results');
+      $block['content'] = theme('oubento_results', $variables);
+      break;
+    case 'oubento_results_eresource' :
+      $variables['silo'] = "eresource";
+      $block['subject'] = t('eResource Results');
+      $block['content'] = theme('oubento_results', $variables);
+      break;
+    case 'oubento_results_people' :
+      $variables['silo'] = "people";
+      $block['subject'] = t('People Results');
       $block['content'] = theme('oubento_results', $variables);
       break;
     case 'oubento_results_collection' :
