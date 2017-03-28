@@ -22,6 +22,12 @@
     mySearches.push(function (needle) {
         return doSearch("site", needle);
     });
+    mySearches.push(function (needle) {
+        return doSearch("eresource", needle);
+    });
+    mySearches.push(function (needle) {
+        return doSearch("people", needle);
+    });
 
 // template search results onto the page
     function displayResults(target, json) {
