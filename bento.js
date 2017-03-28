@@ -50,14 +50,30 @@
 // load search specified by query params
     function loadSearch() {
         // may need to polyfill this
-        var urlParams = new URLSearchParams(window.location.search);
-        var needle = urlParams.get("onesearch");
-        var needle = $("#oubento_searchForm input[id=searchInput]").val();
+        // leaving this commented out for now...may go back and use it later
+        // var urlParams = new URLSearchParams(window.location.search);
+        var needle = getParameter("onesearch");
+        var needleInput = $("#oubento_searchForm input[id=searchInput]").val();
+        needle = (needleInput) ? needleInput : needle;
         if (needle) {
             mySearches.forEach(function (srch) {
                 srch(needle);
             });
         }
+    }
+
+    // split up the url and grab the search parameters
+    function getParameter(paramName) {
+        var searchString = window.location.search.substring(1),
+            i, val, params = searchString.split("&");
+
+        for (i=0;i<params.length;i++) {
+            val = params[i].split("=");
+            if (val[0] == paramName) {
+                return val[1];
+            }
+        }
+        return null;
     }
 
 // search form handler
