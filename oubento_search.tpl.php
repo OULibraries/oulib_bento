@@ -27,7 +27,7 @@
         <p>
           {{#title}}<div class="result-title"><a href="{{{link}}}">{{title}}</a>{{/title}}</div>
           {{#creator}}{{creator}}, {{/creator}}{{#date}}({{date}})</br>{{/date}}
-          {{#text}}{{text}}</br>{{/text}}
+          {{#text}}{{{text}}}</br>{{/text}}
           {{#type}}Material Type: {{type}}</br>{{/type}}
         </p>
         </div>
