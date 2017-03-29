@@ -10,18 +10,20 @@
 <script id="resultTemplate" type="text">
     {{#hits}}
       <div class="result row">
-      <div class="col-sm-1 result-images-div">
 
       {{^image}}
+      <div class="col-sm-1 result-icon-div">
       <img class="result-images" src="sites/all/themes/oulib_bootstrap/img/result-icon-{{type}}.png" >
+      </div>
+      <div class="result-group col-sm-11">
       {{/image}}
 
       {{#image}}
-      <img class="result-images" src="{{image}}" >
-      {{/image}}
-
+      <div class="col-sm-3 result-images-div">
+      <img class="result-images result-specialist img-thumbnail" src="{{image}}" >
       </div>
-      <div class="result-group col-sm-11">
+      <div class="result-group result-group-specialist col-sm-9">
+      {{/image}}
         <p>
           {{#title}}<div class="result-title"><a href="{{{link}}}">{{title}}</a>{{/title}}</div>
           {{#creator}}{{creator}}, {{/creator}}{{#date}}({{date}})</br>{{/date}}
