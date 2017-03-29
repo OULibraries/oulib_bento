@@ -61,6 +61,7 @@
         var needle = getParameter("onesearch");
         var needleInput = $("#oubento_searchForm input[id=searchInput]").val();
         needle = (needleInput) ? needleInput : needle;
+        document.getElementById("searchInput").value = needle;
         if (needle) {
             mySearches.forEach(function (srch) {
                 srch(needle);
