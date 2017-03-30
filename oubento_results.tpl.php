@@ -9,7 +9,7 @@ if ($silo == 'extrasearch') { ?>
   <div class="container-fluid">
     <div class="row">
       <p>
-        Perform this search on another site.
+        Perform this search on another platform (will leave libraries website).
       </p>
       <a class="col-md-2 extra-search" id="search-scholar-icon" rel="ext"
          href="https://scholar.google.com"><img
