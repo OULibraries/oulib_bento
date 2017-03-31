@@ -13,7 +13,7 @@
 
       {{^image}}
       <div class="col-sm-1 result-icon-div">
-      <img class="result-images" src="sites/all/themes/oulib_bootstrap/img/result-icon-{{type}}.png" >
+      <img class="result-images" src="sites/all/themes/oulib_bootstrap/img/result-icon-{{icon}}.png" >
       </div>
       <div class="result-group col-sm-11">
       {{/image}}
