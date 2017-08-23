@@ -25,7 +25,7 @@
       <div class="result-group result-group-specialist col-sm-9">
       {{/image}}
         <p>
-          {{#title}}<div class="result-title"><a href="{{{link}}}">{{title}}</a>{{/title}}</div>
+          {{#title}}<div class="result-title"><a target="_blank" href="{{{link}}}">{{title}}</a>{{/title}}</div>
           {{#creator}}{{creator}}, {{/creator}}{{#date}}({{date}})</br>{{/date}}
           {{#text}}{{{text}}}</br>{{/text}}
           {{#type}}Material Type: {{type}}</br>{{/type}}
