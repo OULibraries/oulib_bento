@@ -31,6 +31,9 @@ if ($silo == 'extrasearch') { ?>
          href="https://babel.hathitrust.org"><img
           src="/sites/all/themes/oulib_bootstrap/img/icon_hathitrust.png" title="HathiTrust: Search digitized content from research libraries." alt="HathiTrust"></a>
 		  
+      <a class="col-md-2 extra-search" id="search-opentextbooks-icon" rel="ext"
+         href="http://open.umn.edu/opentextbooks/"><img
+          src="/sites/all/modules/oulib_bento/img/icon_otl.png" title="Open Textbook Library: Search for open-licensed peer-reviewed textbooks." alt="Open Textbook Library"></a>
     </div>
   </div>
 

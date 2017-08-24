@@ -147,6 +147,9 @@
                     case 'search-hathitrust-icon':
                         window.location = 'https://babel.hathitrust.org/cgi/ls?field1=ocr;q1=' + searchTerm + ';a=srchls;lmt=ft';
                         break;
+                    case 'search-opentextbooks-icon':
+                        window.location = 'http://open.umn.edu/opentextbooks/SearchResults.aspx?searchText=' + searchTerm;
+                        break;
                     default:
                         alert('No link given.');
                 }
