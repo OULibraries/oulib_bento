@@ -35,6 +35,7 @@
     {{/hits}}
     </br>
       <p><a class="btn btn-default results-total"
+      target="_blank"
       href="{{full}}">{{total}} {{topLabel}}
       Result{{#plural}}{{end}}{{/plural}}</a></p>
 
