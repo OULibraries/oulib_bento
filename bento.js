@@ -133,19 +133,22 @@
 
                 switch (this.id) {
                     case 'search-scholar-icon':
-                        window.location = 'https://scholar.google.com/scholar?q=' + searchTerm;
+                        window.open('https://scholar.google.com/scholar?q=' + searchTerm, '_blank');
                         break;
                     case 'search-threed-icon':
-                        window.location = 'https://sketchfab.com/search?q=' + searchTerm;
+                        window.open('https://sketchfab.com/search?q=' + searchTerm, '_blank');
                         break;
                     case 'search-worldcat-icon':
-                        window.location = 'http://ou.worldcat.org/search?qt=wc_org_ou&q=' + searchTerm;
+                        window.open('http://ou.worldcat.org/search?qt=wc_org_ou&q=' + searchTerm, '_blank');
                         break;
                     case 'search-dpla-icon':
-                        window.location = 'https://dp.la/search?utf8=%E2%9C%93&q=' + searchTerm;
+                        window.open('https://dp.la/search?utf8=%E2%9C%93&q=' + searchTerm, '_blank');
                         break;
                     case 'search-hathitrust-icon':
-                        window.location = 'https://babel.hathitrust.org/cgi/ls?field1=ocr;q1=' + searchTerm + ';a=srchls;lmt=ft';
+                        window.open('https://babel.hathitrust.org/cgi/ls?field1=ocr;q1=' + searchTerm + ';a=srchls;lmt=ft', '_blank');
+                        break;
+                    case 'search-opentextbooks-icon':
+                        window.open('http://open.umn.edu/opentextbooks/SearchResults.aspx?searchText=' + searchTerm, '_blank');
                         break;
                     default:
                         alert('No link given.');
