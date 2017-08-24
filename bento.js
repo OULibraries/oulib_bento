@@ -148,7 +148,7 @@
                         window.open('https://babel.hathitrust.org/cgi/ls?field1=ocr;q1=' + searchTerm + ';a=srchls;lmt=ft', '_blank');
                         break;
                     case 'search-opentextbooks-icon':
-                        winddow.open('http://open.umn.edu/opentextbooks/SearchResults.aspx?searchText=' + searchTerm, '_blank');
+                        window.open('http://open.umn.edu/opentextbooks/SearchResults.aspx?searchText=' + searchTerm, '_blank');
                         break;
                     default:
                         alert('No link given.');
